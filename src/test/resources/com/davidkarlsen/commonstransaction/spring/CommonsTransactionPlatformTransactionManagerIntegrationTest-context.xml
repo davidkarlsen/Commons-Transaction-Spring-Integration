@@ -4,11 +4,9 @@
   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
   http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-
   <tx:annotation-driven />
   
-  <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-  </bean>
+  <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" />
 
   <bean id="transactionManager" class="com.davidkarlsen.commonstransaction.spring.CommonsTransactionPlatformTransactionManager">
     <property name="fileResourceManager" ref="fileResourceManager" />
@@ -22,6 +20,5 @@
   <bean id="transactionAwareFileResourceManager" class="com.davidkarlsen.commonstransaction.spring.TransactionAwareFileResourceManager">
     <property name="fileResourceManager" ref="fileResourceManager" />
   </bean>
-
 
 </beans>
