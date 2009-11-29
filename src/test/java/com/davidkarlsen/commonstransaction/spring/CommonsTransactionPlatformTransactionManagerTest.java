@@ -11,6 +11,7 @@ import org.junit.Test;
 import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
 import org.springframework.transaction.support.DefaultTransactionStatus;
+import org.springframework.transaction.support.TransactionTemplate;
 import org.springframework.util.Assert;
 
 /**
@@ -23,6 +24,8 @@ public class CommonsTransactionPlatformTransactionManagerTest
     private CommonsTransactionPlatformTransactionManager commonsTransactionPlatformTransactionManager;
 
     private FileResourceManager fileResourceManager;
+    
+    private TransactionTemplate transactionTemplate;
 
     private File workDir;
 
@@ -50,6 +53,8 @@ public class CommonsTransactionPlatformTransactionManagerTest
 
         commonsTransactionPlatformTransactionManager.setFileResourceManager( fileResourceManager );
         commonsTransactionPlatformTransactionManager.afterPropertiesSet();
+        
+        transactionTemplate = new TransactionTemplate( commonsTransactionPlatformTransactionManager );
     }
 
     @Test
@@ -63,7 +68,6 @@ public class CommonsTransactionPlatformTransactionManagerTest
         commonsTransactionPlatformTransactionManager.commit( transactionStatus );
 
         Assert.isTrue( new File( storeDir, fileName ).exists() );
-        // commonsTransactionPlatformTransactionManager.rollback( transactionStatus );
     }
     
     @Test
@@ -75,7 +79,7 @@ public class CommonsTransactionPlatformTransactionManagerTest
         String fileName = "someFileName";
         fileResourceManager.createResource( ( (DefaultTransactionStatus) transactionStatus ).getTransaction(), fileName );
         commonsTransactionPlatformTransactionManager.rollback( transactionStatus );
-
+        
         Assert.isTrue( ! new File( storeDir, fileName ).exists() );
     }
 

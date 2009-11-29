@@ -50,6 +50,25 @@ public class CommonsTransactionPlatformTransactionManager
      * {@inheritDoc}
      */
     @Override
+    protected boolean isExistingTransaction( Object transaction )
+        throws TransactionException
+    {
+        try
+        {
+            boolean noTransaction = fileResourceManager.getTransactionState( transaction ) == FileResourceManager.STATUS_NO_TRANSACTION;
+            return !noTransaction;
+        }
+        catch ( ResourceManagerException e )
+        {
+            log.error( e );
+            throw new TransactionSystemException( e.getMessage(), e );
+        }
+    }
+    
+    /**
+     * {@inheritDoc}
+     */
+    @Override
     protected void doCommit( DefaultTransactionStatus status )
         throws TransactionException
     {
@@ -72,7 +91,11 @@ public class CommonsTransactionPlatformTransactionManager
     {
         try
         {
-            String txId = fileResourceManager.generatedUniqueTxId();
+            String txId;
+            synchronized ( fileResourceManager )
+            {
+                txId = fileResourceManager.generatedUniqueTxId();
+            }
             log.debug( "Created txId: " + txId );
 
             return txId;
@@ -95,11 +118,45 @@ public class CommonsTransactionPlatformTransactionManager
         {
             log.debug( "Starting transaction: " + transaction );
             fileResourceManager.startTransaction( transaction );
+            
+            switch ( definition.getIsolationLevel() ) {
+                case TransactionDefinition.ISOLATION_READ_COMMITTED:
+                    fileResourceManager.setIsolationLevel( transaction, FileResourceManager.ISOLATION_LEVEL_READ_COMMITTED);
+                    break;
+                case TransactionDefinition.ISOLATION_READ_UNCOMMITTED:
+                    fileResourceManager.setIsolationLevel( transaction, FileResourceManager.ISOLATION_LEVEL_READ_UNCOMMITTED);
+                    break;
+                case TransactionDefinition.ISOLATION_REPEATABLE_READ:
+                    fileResourceManager.setIsolationLevel( transaction, FileResourceManager.ISOLATION_LEVEL_REPEATABLE_READ);
+                    break;
+                case TransactionDefinition.ISOLATION_SERIALIZABLE:
+                    fileResourceManager.setIsolationLevel( transaction, FileResourceManager.ISOLATION_LEVEL_SERIALIZABLE );
+                    break;
+                case TransactionDefinition.ISOLATION_DEFAULT:
+                default:
+            }
         }
         catch ( ResourceManagerException e )
         {
             log.error( e );
             throw new TransactionSystemException( e.getMessage(), e );
+        }
+    }
+    
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    protected void prepareForCommit( DefaultTransactionStatus status )
+    {
+        try
+        {
+            fileResourceManager.prepareTransaction( status.getTransaction() );
+        }
+        catch ( ResourceManagerException e )
+        {
+            log.error( e );
+            throw new RuntimeException( e );
         }
     }
 

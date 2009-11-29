@@ -17,7 +17,7 @@ public class FileResourceManagerFactory
 
     private File storeDir;
     private File workDir;
-    private boolean urlEncodePath = true;
+    private boolean urlEncodePath;
     private LoggerFacade loggerFacade;
     
     public void setStoreDir( File storeDir )
@@ -39,15 +39,16 @@ public class FileResourceManagerFactory
     public void afterPropertiesSet()
         throws Exception
     {
-        super.afterPropertiesSet();
-        
         Assert.notNull( storeDir, "StoreDir must be defined" );
         Assert.notNull( workDir, "workDir must be defined" );
         
         if ( loggerFacade == null ) {
             log.info( "Using commons logging logger facade" );
-            loggerFacade = new CommonsLoggingLogger( log );
+            Log targetLogger = LogFactory.getLog( FileResourceManager.class );
+            loggerFacade = new CommonsLoggingLogger( targetLogger );
         }
+        
+        super.afterPropertiesSet();
     }
 
     @Override
