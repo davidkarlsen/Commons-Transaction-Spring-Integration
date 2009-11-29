@@ -11,7 +11,6 @@ import org.junit.Test;
 import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
 import org.springframework.transaction.support.DefaultTransactionStatus;
-import org.springframework.transaction.support.TransactionTemplate;
 import org.springframework.util.Assert;
 
 /**
@@ -25,8 +24,6 @@ public class CommonsTransactionPlatformTransactionManagerTest
 
     private FileResourceManager fileResourceManager;
     
-    private TransactionTemplate transactionTemplate;
-
     private File workDir;
 
     private File storeDir;
@@ -53,8 +50,6 @@ public class CommonsTransactionPlatformTransactionManagerTest
 
         commonsTransactionPlatformTransactionManager.setFileResourceManager( fileResourceManager );
         commonsTransactionPlatformTransactionManager.afterPropertiesSet();
-        
-        transactionTemplate = new TransactionTemplate( commonsTransactionPlatformTransactionManager );
     }
 
     @Test
