@@ -6,11 +6,29 @@
   <packaging>jar</packaging>
   <version>1.0-SNAPSHOT</version>
   <name>commons-transaction-spring</name>
+  <description>
+    A PlatformTransactionManager implementation and a few Spring Extensions for using
+    Commons Transaction from Apache.
+  </description>
   <scm>
     <connection>scm:git:git://github.com/davidkarlsen/Commons-Transaction-Spring-Integration.git</connection>
     <developerConnection>scm:git:git://github.com/davidkarlsen/Commons-Transaction-Spring-Integration.git</developerConnection>
     <url>http://github.com/davidkarlsen/Commons-Transaction-Spring-Integration</url>
   </scm>
+  <developers>
+    <developer>
+      <id>david</id>
+      <email>david@davidkarlsen.com</email>
+      <name>David J. M. Karlsen</name>
+      <organization>davidkarlsen.com</organization>
+      <organizationUrl>http://www.davidkarlsen.com</organizationUrl>
+      <timezone>+1</timezone>
+      <url>http://www.davidkarlsen.com</url>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+  </developers>
   <dependencies>
     <dependency>
       <groupId>javax.transaction</groupId>

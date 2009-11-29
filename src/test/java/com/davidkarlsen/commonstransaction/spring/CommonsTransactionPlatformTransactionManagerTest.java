@@ -3,7 +3,6 @@ package com.davidkarlsen.commonstransaction.spring;
 import java.io.File;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.SystemUtils;
 import org.apache.commons.transaction.file.FileResourceManager;
 import org.apache.commons.transaction.file.ResourceManagerException;
@@ -15,6 +14,7 @@ import org.springframework.transaction.support.DefaultTransactionStatus;
 import org.springframework.util.Assert;
 
 /**
+ * 
  */
 public class CommonsTransactionPlatformTransactionManagerTest
 {
