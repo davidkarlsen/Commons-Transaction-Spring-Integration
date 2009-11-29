@@ -7,6 +7,7 @@ import org.apache.commons.transaction.file.ResourceManagerException;
 import org.apache.commons.transaction.file.ResourceManagerSystemException;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.transaction.CannotCreateTransactionException;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.TransactionDefinition;
 import org.springframework.transaction.TransactionException;
@@ -74,6 +75,7 @@ public class CommonsTransactionPlatformTransactionManager
     {
         try
         {
+            log.debug( "Commiting transaction: " + status );
             fileResourceManager.commitTransaction( status.getTransaction() );
         }
         catch ( ResourceManagerException e )
@@ -103,7 +105,7 @@ public class CommonsTransactionPlatformTransactionManager
         catch ( ResourceManagerSystemException e )
         {
             log.error( e );
-            throw new TransactionSystemException( e.getMessage(), e );
+            throw new CannotCreateTransactionException( e.getMessage(), e );
         }
     }
 
@@ -151,12 +153,32 @@ public class CommonsTransactionPlatformTransactionManager
     {
         try
         {
+            log.debug( "Prepare commit: " + status );
             fileResourceManager.prepareTransaction( status.getTransaction() );
         }
         catch ( ResourceManagerException e )
         {
             log.error( e );
             throw new RuntimeException( e );
+        }
+    }
+    
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    protected void doSetRollbackOnly( DefaultTransactionStatus status )
+        throws TransactionException
+    {
+        try
+        {
+            log.debug( "Marking transaction for rollback: " + status );
+            fileResourceManager.markTransactionForRollback( status.getTransaction() );
+        }
+        catch ( ResourceManagerException e )
+        {
+            log.error( e );
+            throw new TransactionSystemException( e.getMessage(), e );
         }
     }
 
@@ -197,6 +219,7 @@ public class CommonsTransactionPlatformTransactionManager
     public void destroy()
         throws Exception
     {
+        log.info( "Shutting down transaction manager" );
         fileResourceManager.stop( FileResourceManager.SHUTDOWN_MODE_NORMAL );
     }
 
