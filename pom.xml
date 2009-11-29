@@ -10,11 +10,60 @@
     A PlatformTransactionManager implementation and a few Spring Extensions for using
     Commons Transaction from Apache.
   </description>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <project.build.java.target>1.5</project.build.java.target>
+    <spring.framework.version>2.5.6.SEC01</spring.framework.version>
+  </properties>
   <scm>
     <connection>scm:git:git://github.com/davidkarlsen/Commons-Transaction-Spring-Integration.git</connection>
-    <developerConnection>scm:git:git://github.com/davidkarlsen/Commons-Transaction-Spring-Integration.git</developerConnection>
+    <developerConnection>scm:git:git@github.com:davidkarlsen/Commons-Transaction-Spring-Integration.git</developerConnection>
     <url>http://github.com/davidkarlsen/Commons-Transaction-Spring-Integration</url>
   </scm>
+  <licenses>
+    <license>
+      <name>Apache License, version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <profiles>
+    <profile>
+      <id>dev</id>
+      <build>
+        <pluginManagement>
+          <plugins>
+            <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-eclipse-plugin</artifactId>
+              <version>2.7</version>
+              <configuration>
+                <downloadJavadocs>true</downloadJavadocs>
+                <downloadSources>true</downloadSources>
+                <additionalProjectnatures>
+                  <projectnature>org.springframework.ide.eclipse.core.springnature</projectnature>
+                </additionalProjectnatures>
+              </configuration>
+            </plugin>
+          </plugins>
+        </pluginManagement>
+      </build>
+    </profile>
+  </profiles>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>2.0.2</version>
+        <configuration>
+          <source>${project.build.java.target}</source>
+          <target>${project.build.java.target}</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
   <developers>
     <developer>
       <id>david</id>
@@ -31,10 +80,9 @@
   </developers>
   <dependencies>
     <dependency>
-      <groupId>javax.transaction</groupId>
-      <artifactId>jta</artifactId>
-      <version>1.1</version>
-      <scope>provided</scope>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging</artifactId>
+      <version>1.1.1</version>
     </dependency>
     <dependency>
       <groupId>commons-transaction</groupId>
@@ -43,8 +91,24 @@
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
+      <artifactId>spring-beans</artifactId>
+      <version>${spring.framework.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+      <version>${spring.framework.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
       <artifactId>spring-tx</artifactId>
-      <version>2.5.6.SEC01</version>
+      <version>${spring.framework.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>javax.transaction</groupId>
+      <artifactId>jta</artifactId>
+      <version>1.1</version>
+      <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>commons-io</groupId>
