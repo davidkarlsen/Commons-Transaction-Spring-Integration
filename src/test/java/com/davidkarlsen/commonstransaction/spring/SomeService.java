@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Transactional
-public class TestService
+public class SomeService
 {
     @Autowired
     private TransactionAwareFileResourceManager transactionAwareFileResourceManager;

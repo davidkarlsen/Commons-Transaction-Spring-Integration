@@ -20,7 +20,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class CommonsTransactionPlatformTransactionManagerIntegrationTest
 {
     @Autowired
-    private TestService testService;
+    private SomeService someService;
     
     private File storeDir;
 
@@ -44,7 +44,7 @@ public class CommonsTransactionPlatformTransactionManagerIntegrationTest
         final String fileName = "someFileName";
         try
         {
-            testService.writeStringToFile( "someString", fileName, new RuntimeException() );
+            someService.writeStringToFile( "someString", fileName, new RuntimeException() );
         }
         catch ( RuntimeException e )
         {
@@ -58,11 +58,11 @@ public class CommonsTransactionPlatformTransactionManagerIntegrationTest
     {
         final String fileName = "someExistFile";
         final String fileContents = "someString";
-        testService.writeStringToFile( fileContents, fileName, null );
+        someService.writeStringToFile( fileContents, fileName, null );
         File createdFile = new File( storeDir, fileName );
         Assert.assertTrue( createdFile.exists() );
         
-        String compareString = testService.readFile( fileName );
+        String compareString = someService.readFile( fileName );
         Assert.assertEquals( fileContents, compareString );
     }
 
@@ -70,7 +70,7 @@ public class CommonsTransactionPlatformTransactionManagerIntegrationTest
     public void testInvalidFileName()
         throws IOException, ResourceManagerException
     {
-        testService.writeStringToFile( "", "", null );
+        someService.writeStringToFile( "", "", null );
     }
 
 
