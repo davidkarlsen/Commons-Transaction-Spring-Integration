@@ -1,8 +1,10 @@
 package com.davidkarlsen.commonstransaction.spring;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
 
+import org.apache.commons.io.IOUtils;
 import org.apache.commons.transaction.file.ResourceManagerException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,6 +27,11 @@ public class TestService
         
         if ( exceptionToThrow != null )
             throw exceptionToThrow;
+    }
+    
+    public String readFile( String resourceId ) throws IOException, ResourceManagerException{
+        InputStream inputStream = transactionAwareFileResourceManager.readResource( resourceId );
+        return IOUtils.toString( inputStream );
     }
 
 }
