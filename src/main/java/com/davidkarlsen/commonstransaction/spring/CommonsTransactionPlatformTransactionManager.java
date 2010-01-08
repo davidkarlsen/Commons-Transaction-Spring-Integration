@@ -14,6 +14,7 @@ import org.springframework.transaction.TransactionException;
 import org.springframework.transaction.TransactionSystemException;
 import org.springframework.transaction.support.AbstractPlatformTransactionManager;
 import org.springframework.transaction.support.DefaultTransactionStatus;
+import org.springframework.transaction.support.ResourceTransactionManager;
 import org.springframework.util.Assert;
 
 /**
@@ -22,13 +23,14 @@ import org.springframework.util.Assert;
  * 
  * @author karltdav
  * @see PlatformTransactionManager
+ * @see ResourceTransactionManager
  * @see http://commons.apache.org/transaction/
  * @see http://myjavatricks.com/jtfs.aspx
  *
  */
 public class CommonsTransactionPlatformTransactionManager
     extends AbstractPlatformTransactionManager
-    implements PlatformTransactionManager, InitializingBean, DisposableBean
+    implements InitializingBean, DisposableBean, ResourceTransactionManager
 {
     private static final long serialVersionUID = 8316646351941218318L;
 
@@ -221,6 +223,15 @@ public class CommonsTransactionPlatformTransactionManager
     {
         log.info( "Shutting down transaction manager" );
         fileResourceManager.stop( FileResourceManager.SHUTDOWN_MODE_NORMAL );
+    }
+
+    /**
+     * {@inheritDoc}
+     * Co-variant version of {@linkplain ResourceTransactionManager#getResourceFactory()}
+     */
+    public FileResourceManager getResourceFactory()
+    {
+        return this.fileResourceManager;
     }
 
 }
