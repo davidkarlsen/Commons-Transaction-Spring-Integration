@@ -43,7 +43,6 @@ public class CommonsTransactionPlatformTransactionManagerTest
         FileResourceManagerFactory fileResourceManagerFactory = new FileResourceManagerFactory();
         fileResourceManagerFactory.setStoreDir( storeDir );
         fileResourceManagerFactory.setWorkDir( workDir );
-        fileResourceManagerFactory.setUrlEncodePath( false );
         fileResourceManagerFactory.afterPropertiesSet();
 
         fileResourceManager = (FileResourceManager) fileResourceManagerFactory.createInstance();

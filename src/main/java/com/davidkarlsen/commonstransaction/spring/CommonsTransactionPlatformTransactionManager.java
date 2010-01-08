@@ -20,12 +20,13 @@ import org.springframework.util.Assert;
 /**
  * A {@linkplain PlatformTransactionManager} implementation for commons transaction.
  * 
- * 
- * @author karltdav
+ *  
  * @see PlatformTransactionManager
  * @see ResourceTransactionManager
  * @see http://commons.apache.org/transaction/
  * @see http://myjavatricks.com/jtfs.aspx
+ * 
+ * @author <a href="mailto:david@davidkarlsen.com">David J. M Karlsen</a>
  *
  */
 public class CommonsTransactionPlatformTransactionManager

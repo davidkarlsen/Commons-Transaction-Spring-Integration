@@ -53,7 +53,7 @@ public class CommonsTransactionPlatformTransactionManagerIntegrationTest
     }
     
     @Test
-    public void testWrite()
+    public void testWriteRead()
         throws Exception
     {
         final String fileName = "someExistFile";
@@ -61,7 +61,9 @@ public class CommonsTransactionPlatformTransactionManagerIntegrationTest
         testService.writeStringToFile( fileContents, fileName, null );
         File createdFile = new File( storeDir, fileName );
         Assert.assertTrue( createdFile.exists() );
-        Assert.assertTrue( FileUtils.readFileToString( createdFile ).equals( fileContents ) );
+        
+        String compareString = testService.readFile( fileName );
+        Assert.assertEquals( fileContents, compareString );
     }
 
     @Test( expected = ResourceManagerException.class )
