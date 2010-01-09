@@ -29,7 +29,7 @@ public class TransactionAwareFileResourceManager
     public void createResource( String resourceId )
         throws ResourceManagerException
     {
-        fileResourceManager.createResource( getCurrentNativeTransaction(), resourceId );
+        createResource( resourceId, false );
     }
 
     public void createResource( String resourceId, boolean overwrite )
@@ -55,7 +55,7 @@ public class TransactionAwareFileResourceManager
     public OutputStream writeResource( String resourceId )
         throws NoTransactionException, ResourceManagerException
     {
-        return fileResourceManager.writeResource( getCurrentNativeTransaction(), resourceId );
+        return writeResource( resourceId, false );
     }
 
     public OutputStream writeResource( String resourceId, boolean overwrite )
