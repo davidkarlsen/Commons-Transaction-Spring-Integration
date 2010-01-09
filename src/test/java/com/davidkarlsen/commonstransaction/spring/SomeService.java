@@ -29,6 +29,7 @@ public class SomeService
             throw exceptionToThrow;
     }
     
+    @Transactional( readOnly=true )
     public String readFile( String resourceId ) throws IOException, ResourceManagerException{
         InputStream inputStream = transactionAwareFileResourceManager.readResource( resourceId );
         return IOUtils.toString( inputStream );
