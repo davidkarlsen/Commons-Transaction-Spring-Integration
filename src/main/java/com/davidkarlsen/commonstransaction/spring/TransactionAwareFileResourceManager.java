@@ -15,13 +15,14 @@ import org.springframework.util.Assert;
 
 /**
  * A {@link FileResourceManager} which is transaction aware, thus transaction handling can be handled outside of the
- * manager.
+ * manager. Suitable when transaction demarcation are declared with AOP.
  * 
  * @author <a href="mailto:david@davidkarlsen.com">David J. M Karlsen</a>
  */
 public class TransactionAwareFileResourceManager
 {
     private final Logger logger = LoggerFactory.getLogger( getClass() );
+
     private FileResourceManager fileResourceManager;
 
     public void setFileResourceManager( FileResourceManager fileResourceManager )
