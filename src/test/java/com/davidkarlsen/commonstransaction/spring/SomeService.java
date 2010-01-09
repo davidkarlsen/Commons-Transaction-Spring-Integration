@@ -34,5 +34,13 @@ public class SomeService
         InputStream inputStream = transactionAwareFileResourceManager.readResource( resourceId );
         return IOUtils.toString( inputStream );
     }
+    
+    public void delete( String resourceId ) throws ResourceManagerException {
+        transactionAwareFileResourceManager.deleteResource( resourceId );
+    }
+    
+    public void create( String resourceId ) throws ResourceManagerException {
+        transactionAwareFileResourceManager.createResource( resourceId );
+    }
 
 }

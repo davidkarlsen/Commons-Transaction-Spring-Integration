@@ -21,22 +21,42 @@ public class CommonsTransactionPlatformTransactionManagerIntegrationTest
 {
     @Autowired
     private SomeService someService;
-    
+
     private File storeDir;
 
     @Before
-    public void before() throws IOException {
+    public void before()
+        throws IOException
+    {
         storeDir = new File( SystemUtils.JAVA_IO_TMPDIR, "storedir" );
         FileUtils.cleanDirectory( storeDir );
     }
-    
+
+    private void assertFileExists( String resourceId )
+    {
+        File file = new File( storeDir, resourceId );
+        Assert.assertTrue( file.exists() );
+    }
+
+    private void assertFileNotExists( String resourceId )
+    {
+        File file = new File( storeDir, resourceId );
+        Assert.assertFalse( file.exists() );
+    }
+
     @Test
-    public void testCreate()
+    public void testCreateDelete()
         throws ResourceManagerException
     {
-        // transactionAwareFileResourceManager.createResource( "someName" );
+        final String resourceId = "someId";
+
+        someService.create( resourceId );
+        assertFileExists( resourceId );
+
+        someService.delete( resourceId );
+        assertFileNotExists( resourceId );
     }
-    
+
     @Test
     public void testRollback()
         throws IOException, ResourceManagerException
@@ -48,10 +68,10 @@ public class CommonsTransactionPlatformTransactionManagerIntegrationTest
         }
         catch ( RuntimeException e )
         {
-            Assert.assertFalse( new File( storeDir, fileName ).exists() );
+            assertFileNotExists( fileName );
         }
     }
-    
+
     @Test
     public void testWriteRead()
         throws Exception
@@ -59,9 +79,8 @@ public class CommonsTransactionPlatformTransactionManagerIntegrationTest
         final String fileName = "someExistFile";
         final String fileContents = "someString";
         someService.writeStringToFile( fileContents, fileName, null );
-        File createdFile = new File( storeDir, fileName );
-        Assert.assertTrue( createdFile.exists() );
-        
+        assertFileExists( fileName );
+
         String compareString = someService.readFile( fileName );
         Assert.assertEquals( fileContents, compareString );
     }
@@ -80,5 +99,11 @@ public class CommonsTransactionPlatformTransactionManagerIntegrationTest
         someService.writeStringToFile( "", null, null );
     }
 
+    @Test
+    public void testDeleteNonExisting()
+        throws ResourceManagerException
+    {
+        someService.delete( "notExisting" );
+    }
 
 }
