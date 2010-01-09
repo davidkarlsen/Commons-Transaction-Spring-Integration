@@ -5,6 +5,8 @@ import java.io.OutputStream;
 
 import org.apache.commons.transaction.file.FileResourceManager;
 import org.apache.commons.transaction.file.ResourceManagerException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.transaction.NoTransactionException;
 import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.interceptor.TransactionAspectSupport;
@@ -19,6 +21,7 @@ import org.springframework.util.Assert;
  */
 public class TransactionAwareFileResourceManager
 {
+    private final Logger logger = LoggerFactory.getLogger( getClass() );
     private FileResourceManager fileResourceManager;
 
     public void setFileResourceManager( FileResourceManager fileResourceManager )
@@ -48,6 +51,7 @@ public class TransactionAwareFileResourceManager
         }
         catch ( NoTransactionException e )
         {
+            logger.warn( "Reading outside of active transaction" );
             return fileResourceManager.readResource( resourceId );
         }
     }
