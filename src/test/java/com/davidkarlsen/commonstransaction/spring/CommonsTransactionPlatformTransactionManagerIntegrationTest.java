@@ -73,5 +73,12 @@ public class CommonsTransactionPlatformTransactionManagerIntegrationTest
         someService.writeStringToFile( "", "", null );
     }
 
+    @Test( expected = ResourceManagerException.class )
+    public void testNullFileName()
+        throws IOException, ResourceManagerException
+    {
+        someService.writeStringToFile( "", null, null );
+    }
+
 
 }
