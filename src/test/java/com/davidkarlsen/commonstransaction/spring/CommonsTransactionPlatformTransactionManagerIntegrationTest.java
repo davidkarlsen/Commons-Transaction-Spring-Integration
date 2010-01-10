@@ -62,12 +62,14 @@ public class CommonsTransactionPlatformTransactionManagerIntegrationTest
         throws IOException, ResourceManagerException
     {
         final String fileName = "someFileName";
+        final RuntimeException runtimeException = new RuntimeException();
         try
         {
-            someService.writeStringToFile( "someString", fileName, new RuntimeException() );
+            someService.writeStringToFile( "someString", fileName, runtimeException );
         }
         catch ( RuntimeException e )
         {
+            Assert.assertEquals( runtimeException, e );
             assertFileNotExists( fileName );
         }
     }
