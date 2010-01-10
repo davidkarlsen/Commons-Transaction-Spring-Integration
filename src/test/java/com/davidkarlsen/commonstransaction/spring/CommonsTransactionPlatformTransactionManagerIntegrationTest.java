@@ -29,7 +29,7 @@ public class CommonsTransactionPlatformTransactionManagerIntegrationTest
         throws IOException
     {
         storeDir = new File( SystemUtils.JAVA_IO_TMPDIR, "storeDir" );
-        FileUtils.cleanDirectory( storeDir );
+        FileUtils.deleteDirectory( storeDir );
     }
 
     private void assertFileExists( String resourceId )
