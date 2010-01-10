@@ -6,6 +6,8 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang.SystemUtils;
 import org.apache.commons.transaction.file.FileResourceManager;
 import org.apache.commons.transaction.file.ResourceManagerException;
+import org.apache.commons.transaction.file.ResourceManagerSystemException;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.transaction.TransactionStatus;
@@ -49,6 +51,12 @@ public class CommonsTransactionPlatformTransactionManagerTest
 
         commonsTransactionPlatformTransactionManager.setFileResourceManager( fileResourceManager );
         commonsTransactionPlatformTransactionManager.afterPropertiesSet();
+    }
+    
+    @After
+    public void after() throws Exception {
+        this.commonsTransactionPlatformTransactionManager.destroy();
+        this.fileResourceManager.stop( FileResourceManager.SHUTDOWN_MODE_NORMAL );
     }
 
     @Test
