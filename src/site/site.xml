@@ -1,0 +1,25 @@
+<project xmlns="http://maven.apache.org/DECORATION/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/DECORATION/1.0.0 http://maven.apache.org/xsd/decoration-1.0.0.xsd">
+  <bannerLeft>
+    <alt>davidkarlsen.com</alt>
+    <href>http://www.davidkarlsen.com</href>
+    <name>davidkarlsen.com</name>
+  </bannerLeft>
+  <version position="left" />
+  <publishDate format="dd.MM.yyyy" position="right" />
+  <body>
+    <breadcrumbs>
+      <item href="http://www.davidkarlsen.com" name="davidkarlsen.com" />
+    </breadcrumbs>
+    <menu name="Overview">
+      <item name="Introduction" href="index.html" />
+      <item name="Usage" href="usage.html" />
+    </menu>
+    <menu ref="reports" />
+  </body>
+  <skin>
+    <groupId>org.apache.maven.skins</groupId>
+    <artifactId>maven-default-skin</artifactId>
+    <version>1.0</version>
+  </skin>
+</project>
