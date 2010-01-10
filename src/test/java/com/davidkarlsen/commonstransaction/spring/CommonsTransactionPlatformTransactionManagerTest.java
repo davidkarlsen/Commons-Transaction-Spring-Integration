@@ -34,7 +34,7 @@ public class CommonsTransactionPlatformTransactionManagerTest
     {
         commonsTransactionPlatformTransactionManager = new CommonsTransactionPlatformTransactionManager();
         File tmpDir = SystemUtils.getJavaIoTmpDir();
-        storeDir = new File( tmpDir, "storedir" );
+        storeDir = new File( tmpDir, "storeDir" );
         workDir = new File( tmpDir, "workDir" );
 
         FileUtils.deleteDirectory( storeDir );

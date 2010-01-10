@@ -28,7 +28,7 @@ public class CommonsTransactionPlatformTransactionManagerIntegrationTest
     public void before()
         throws IOException
     {
-        storeDir = new File( SystemUtils.JAVA_IO_TMPDIR, "storedir" );
+        storeDir = new File( SystemUtils.JAVA_IO_TMPDIR, "storeDir" );
         FileUtils.cleanDirectory( storeDir );
     }
 
