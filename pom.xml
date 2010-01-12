@@ -24,7 +24,7 @@
   </ciManagement>
   <scm>
     <connection>scm:git:git://github.com/davidkarlsen/Commons-Transaction-Spring-Integration.git</connection>
-    <developerConnection>scm:git:git@github.com:davidkarlsen/Commons-Transaction-Spring-Integration.git</developerConnection>
+    <developerConnection>scm:git:git://git@github.com/davidkarlsen/Commons-Transaction-Spring-Integration.git</developerConnection>
     <url>http://github.com/davidkarlsen/Commons-Transaction-Spring-Integration</url>
   </scm>
   <distributionManagement>
