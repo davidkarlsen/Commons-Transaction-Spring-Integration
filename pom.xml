@@ -35,7 +35,7 @@
     <repository>
       <id>www.davidkarlsen.com</id>
       <name>www.davidkarlsen.com</name>
-      <url>http://www.davidkarlsen.com/m2</url>
+      <url>scp://root@192.168.3.34/var/www/hosts/www.davidkarlsen.com/m2</url>
     </repository>
     <site>
       <id>www.davidkarlsen.com</id>
