@@ -73,41 +73,14 @@
       </build>
     </profile>
     <profile>
-      <id>emma</id>
-      <build>
+      <id>reports</id>
+      <reporting>
         <plugins>
           <plugin>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>emma-maven-plugin</artifactId>
             <version>1.0-alpha-2</version>
-            <executions>
-              <execution>
-                <id>instrument</id>
-                <phase>process-test-classes</phase>
-                <goals>
-                  <goal>instrument</goal>
-                </goals>
-              </execution>
-            </executions>
           </plugin>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-surefire-plugin</artifactId>
-            <version>2.4.3</version>
-            <inherited>true</inherited>
-            <configuration>
-              <forkMode>always</forkMode>
-              <reportFormat>xml</reportFormat>
-              <classesDirectory>${project.build.directory}/generated-classes/emma/classes</classesDirectory>
-            </configuration>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-    <profile>
-      <id>reports</id>
-      <reporting>
-        <plugins>
           <plugin>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>javancss-maven-plugin</artifactId>
