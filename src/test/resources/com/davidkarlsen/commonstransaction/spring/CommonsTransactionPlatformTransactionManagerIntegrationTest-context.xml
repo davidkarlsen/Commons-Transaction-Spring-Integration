@@ -20,6 +20,9 @@
   <bean id="fileResourceManager" class="com.davidkarlsen.commonstransaction.spring.FileResourceManagerFactory">
     <property name="storeDir" value="${java.io.tmpdir}/storeDir" />
     <property name="workDir" value="${java.io.tmpdir}/workDir" />
+    <property name="loggerFacade">
+      <bean class="com.davidkarlsen.commonstransaction.spring.Slf4jLoggerFacade" />
+    </property>
   </bean>
 
   <bean id="transactionAwareFileResourceManager" class="com.davidkarlsen.commonstransaction.spring.TransactionAwareFileResourceManager">
