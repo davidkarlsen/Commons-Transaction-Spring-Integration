@@ -3,7 +3,7 @@
   <groupId>com.davidkarlsen.commonstransaction.spring</groupId>
   <artifactId>commons-transaction-spring</artifactId>
   <packaging>jar</packaging>
-  <version>1.0-alpha-2</version>
+  <version>1.0-alpha-3-SNAPSHOT</version>
   <name>commons-transaction-spring</name>
   <url>http://wiki.github.com/davidkarlsen/Commons-Transaction-Spring-Integration</url>
   <description>
