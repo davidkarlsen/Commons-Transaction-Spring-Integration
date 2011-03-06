@@ -16,7 +16,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <project.build.java.target>1.5</project.build.java.target>
     <spring.framework.version>3.0.5.RELEASE</spring.framework.version>
-    <slf4j.version>1.5.10</slf4j.version>
+    <slf4j.version>1.6.1</slf4j.version>
   </properties>
   <ciManagement>
     <system>hudson</system>
