@@ -16,6 +16,10 @@
         A PlatformTransactionManager implementation and a few Spring Extensions for using
         Commons Transaction from Apache for transactional fileaccess.
     </description>
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/davidkarlsen/Commons-Transaction-Spring-Integration/issues</url>
+    </issueManagement>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
