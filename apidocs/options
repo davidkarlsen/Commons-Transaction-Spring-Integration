@@ -1,5 +1,5 @@
 -classpath
-'/home/et2448/projects/ext/github.com/Commons-Transaction-Spring-Integration/target/classes:/home/et2448/.m2/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar:/home/et2448/.m2/repository/org/springframework/spring-expression/3.0.5.RELEASE/spring-expression-3.0.5.RELEASE.jar:/home/et2448/.m2/repository/org/springframework/spring-beans/3.0.5.RELEASE/spring-beans-3.0.5.RELEASE.jar:/home/et2448/.m2/repository/org/springframework/spring-asm/3.0.5.RELEASE/spring-asm-3.0.5.RELEASE.jar:/home/et2448/.m2/repository/org/springframework/spring-core/3.0.5.RELEASE/spring-core-3.0.5.RELEASE.jar:/home/et2448/.m2/repository/org/springframework/spring-context/3.0.5.RELEASE/spring-context-3.0.5.RELEASE.jar:/home/et2448/.m2/repository/commons-transaction/commons-transaction/1.2/commons-transaction-1.2.jar:/home/et2448/.m2/repository/org/slf4j/slf4j-api/1.6.1/slf4j-api-1.6.1.jar:/home/et2448/.m2/repository/org/slf4j/jcl-over-slf4j/1.6.1/jcl-over-slf4j-1.6.1.jar:/home/et2448/.m2/repository/javax/transaction/jta/1.1/jta-1.1.jar:/home/et2448/.m2/repository/commons-codec/commons-codec/1.2/commons-codec-1.2.jar:/home/et2448/.m2/repository/org/springframework/spring-tx/3.0.5.RELEASE/spring-tx-3.0.5.RELEASE.jar'
+'/home/et2448/projects/ext/github.com/Commons-Transaction-Spring-Integration/target/checkout/target/classes:/home/et2448/.m2/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar:/home/et2448/.m2/repository/org/springframework/spring-expression/3.0.5.RELEASE/spring-expression-3.0.5.RELEASE.jar:/home/et2448/.m2/repository/org/springframework/spring-beans/3.0.5.RELEASE/spring-beans-3.0.5.RELEASE.jar:/home/et2448/.m2/repository/org/springframework/spring-asm/3.0.5.RELEASE/spring-asm-3.0.5.RELEASE.jar:/home/et2448/.m2/repository/org/springframework/spring-core/3.0.5.RELEASE/spring-core-3.0.5.RELEASE.jar:/home/et2448/.m2/repository/org/springframework/spring-context/3.0.5.RELEASE/spring-context-3.0.5.RELEASE.jar:/home/et2448/.m2/repository/commons-transaction/commons-transaction/1.2/commons-transaction-1.2.jar:/home/et2448/.m2/repository/org/slf4j/slf4j-api/1.6.1/slf4j-api-1.6.1.jar:/home/et2448/.m2/repository/org/slf4j/jcl-over-slf4j/1.6.1/jcl-over-slf4j-1.6.1.jar:/home/et2448/.m2/repository/javax/transaction/jta/1.1/jta-1.1.jar:/home/et2448/.m2/repository/commons-codec/commons-codec/1.2/commons-codec-1.2.jar:/home/et2448/.m2/repository/org/springframework/spring-tx/3.0.5.RELEASE/spring-tx-3.0.5.RELEASE.jar'
 -doclet
 'org.umlgraph.doclet.UmlGraphDoc'
 -docletpath
@@ -10,7 +10,7 @@
 -source
 '1.5'
 -sourcepath
-'/home/et2448/projects/ext/github.com/Commons-Transaction-Spring-Integration/src/main/java'
+'/home/et2448/projects/ext/github.com/Commons-Transaction-Spring-Integration/target/checkout/src/main/java'
 -inferrel -inferdep -quiet -hide java.*
                                     -collpackages java.util.* -qualify
                                     -postfixpackage -nodefontsize 9
@@ -21,11 +21,11 @@
 -charset
 'UTF-8'
 -d
-'/home/et2448/projects/ext/github.com/Commons-Transaction-Spring-Integration/target/site/apidocs'
+'/home/et2448/projects/ext/github.com/Commons-Transaction-Spring-Integration/target/checkout/target/site/apidocs'
 -docencoding
 'UTF-8'
 -doctitle
-'commons-transaction-spring 1.0-alpha-3-SNAPSHOT API'
+'commons-transaction-spring 0.9 API'
 -link
 'http://java.sun.com/j2se/1.5.0/docs/api'
 -link
@@ -43,4 +43,4 @@
 -use
 -version
 -windowtitle
-'commons-transaction-spring 1.0-alpha-3-SNAPSHOT API'
+'commons-transaction-spring 0.9 API'

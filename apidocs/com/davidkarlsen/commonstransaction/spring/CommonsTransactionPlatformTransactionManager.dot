@@ -27,10 +27,10 @@ digraph G {
 	c64:p -> c73:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// com.davidkarlsen.commonstransaction.spring.CommonsTransactionPlatformTransactionManager NAVASSOC org.apache.commons.transaction.file.FileResourceManager
 	c64:p -> c74:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
-	// com.davidkarlsen.commonstransaction.spring.CommonsTransactionPlatformTransactionManager DEPEND org.springframework.transaction.support.DefaultTransactionStatus
-	c64:p -> c77:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// com.davidkarlsen.commonstransaction.spring.CommonsTransactionPlatformTransactionManager DEPEND org.apache.commons.transaction.file.FileResourceManager
 	c64:p -> c74:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// com.davidkarlsen.commonstransaction.spring.CommonsTransactionPlatformTransactionManager DEPEND org.springframework.transaction.support.DefaultTransactionStatus
+	c64:p -> c77:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// com.davidkarlsen.commonstransaction.spring.CommonsTransactionPlatformTransactionManager DEPEND org.springframework.transaction.TransactionDefinition
 	c64:p -> c78:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// org.springframework.transaction.support.DefaultTransactionStatus
