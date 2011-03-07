@@ -26,6 +26,7 @@
         <project.build.java.target>1.5</project.build.java.target>
         <spring.framework.version>3.0.5.RELEASE</spring.framework.version>
         <slf4j.version>1.6.1</slf4j.version>
+        <javadocPluginVersion>2.7</javadocPluginVersion>
     </properties>
     <distributionManagement>
         <site>
@@ -93,7 +94,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>2.7</version>
+                        <version>${javadocPluginVersion}</version>
                         <configuration>
                             <detectLinks>true</detectLinks>
                             <source>${project.build.java.target}</source>
@@ -182,6 +183,29 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>3.0-beta-3</version>
+                <configuration>
+                    <reportPlugins>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-project-info-reports-plugin</artifactId>
+                            <version>2.3.1</version>
+                            <configuration>
+                                <dependencyDetailsEnabled>true</dependencyDetailsEnabled>
+                                <dependencyLocationsEnabled>true</dependencyLocationsEnabled>
+                            </configuration>
+                        </plugin>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-javadoc-plugin</artifactId>
+                            <version>${javadocPluginVersion}</version>
+                        </plugin>
+                    </reportPlugins>
+                </configuration>
             </plugin>
         </plugins>
     </build>
