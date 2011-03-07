@@ -14,7 +14,7 @@
     <url>http://wiki.github.com/davidkarlsen/Commons-Transaction-Spring-Integration</url>
     <description>
         A PlatformTransactionManager implementation and a few Spring Extensions for using
-        Commons Transaction from Apache for transactional fileaccess.
+        Commons Transaction from Apache for transactional file access.
     </description>
     <issueManagement>
         <system>GitHub</system>
