@@ -12,6 +12,9 @@
     <version>1.0-alpha-3-SNAPSHOT</version>
     <name>commons-transaction-spring</name>
     <url>http://wiki.github.com/davidkarlsen/Commons-Transaction-Spring-Integration</url>
+    <prerequisites>
+        <maven>3.0.0</maven>
+    </prerequisites>
     <description>
         A PlatformTransactionManager implementation and a few Spring Extensions for using
         Commons Transaction from Apache for transactional file access.
