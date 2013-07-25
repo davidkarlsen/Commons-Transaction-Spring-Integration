@@ -23,8 +23,8 @@ import org.springframework.util.Assert;
  *  
  * @see PlatformTransactionManager
  * @see ResourceTransactionManager
- * @see http://commons.apache.org/transaction/
- * @see http://myjavatricks.com/jtfs.aspx
+ * @see <a href="http://commons.apache.org/transaction/">Commons transactions</a>
+ * @see <a href="http://myjavatricks.com/jtfs.aspx">myjavatricks.com</a>
  * 
  * @author <a href="mailto:david@davidkarlsen.com">David J. M Karlsen</a>
  *
