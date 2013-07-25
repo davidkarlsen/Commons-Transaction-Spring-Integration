@@ -318,7 +318,7 @@
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
-            <version>1.6.10</version>
+            <version>1.7.3</version>
             <scope>test</scope>
         </dependency>
         <dependency>
