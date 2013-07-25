@@ -142,6 +142,7 @@
                     <detectLinks>true</detectLinks>
                     <encoding>${project.build.sourceEncoding}</encoding>
                     <source>${project.build.java.target}</source>
+                    <!-- 
                     <doclet>org.umlgraph.doclet.UmlGraphDoc</doclet>
                     <docletArtifact>
                         <groupId>org.umlgraph</groupId>
@@ -154,6 +155,7 @@
                         -postfixpackage -nodefontsize 9
                         -nodefontpackagesize 7
                     </additionalparam>
+                    -->
                 </configuration>
             </plugin>
             <plugin>
@@ -195,6 +197,7 @@
                                 <detectLinks>true</detectLinks>
                                 <encoding>${project.build.sourceEncoding}</encoding>
                                 <source>${project.build.java.target}</source>
+                                <!-- 
                                 <doclet>org.umlgraph.doclet.UmlGraphDoc</doclet>
                                 <docletArtifact>
                                     <groupId>org.umlgraph</groupId>
@@ -207,6 +210,7 @@
                                     -postfixpackage -nodefontsize 9
                                     -nodefontpackagesize 7
                                 </additionalparam>
+                                -->
                             </configuration>
                         </plugin>
                         <plugin>
