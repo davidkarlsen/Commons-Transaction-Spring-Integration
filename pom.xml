@@ -28,7 +28,7 @@
         <project.build.java.target>1.5</project.build.java.target>
         <spring.framework.version>3.2.3.RELEASE</spring.framework.version>
         <slf4j.version>1.7.5</slf4j.version>
-        <javadocPluginVersion>2.7</javadocPluginVersion>
+        <javadocPluginVersion>2.9.1</javadocPluginVersion>
     </properties>
     <distributionManagement>
         <site>
