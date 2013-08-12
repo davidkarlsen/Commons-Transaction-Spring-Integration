@@ -37,8 +37,8 @@
         </site>
     </distributionManagement>
     <ciManagement>
-        <system>hudson</system>
-        <url>http://davidkarlsen.com/hudson/</url>
+        <system>travis-ci.org</system>
+        <url>https://travis-ci.org/davidkarlsen/Commons-Transaction-Spring-Integration</url>
     </ciManagement>
     <scm>
         <connection>scm:git:git://github.com/davidkarlsen/Commons-Transaction-Spring-Integration.git</connection>
