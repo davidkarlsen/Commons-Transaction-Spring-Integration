@@ -146,6 +146,7 @@
                 <artifactId>maven-site-plugin</artifactId>
                 <version>3.3</version>
                 <configuration>
+		    <skipDeploy>true</skipDeploy> <!-- use github maven site plugin instead -->
                     <reportPlugins>
                         <plugin>
                             <groupId>org.apache.maven.plugins</groupId>
@@ -221,6 +222,23 @@
                     </reportPlugins>
                 </configuration>
             </plugin>
+ <plugin>
+      <groupId>com.github.github</groupId>
+      <artifactId>site-maven-plugin</artifactId>
+      <version>0.8</version>
+      <configuration>
+        <message>Creating site for ${project.version}</message>
+	<server>github</server>
+      </configuration>
+      <executions>
+        <execution>
+          <goals>
+            <goal>site</goal>
+          </goals>
+          <phase>site-deploy</phase>
+        </execution>
+      </executions>
+    </plugin>
         </plugins>
     </build>
     <developers>
