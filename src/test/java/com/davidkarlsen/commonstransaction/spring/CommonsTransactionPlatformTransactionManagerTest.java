@@ -8,12 +8,13 @@ import org.apache.commons.transaction.file.FileResourceManager;
 import org.apache.commons.transaction.file.ResourceManagerException;
 import org.apache.commons.transaction.file.ResourceManagerSystemException;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
 import org.springframework.transaction.support.DefaultTransactionStatus;
-import org.springframework.util.Assert;
+
 
 /**
  * 
@@ -69,7 +70,7 @@ public class CommonsTransactionPlatformTransactionManagerTest
         fileResourceManager.createResource( ( (DefaultTransactionStatus) transactionStatus ).getTransaction(), fileName );
         commonsTransactionPlatformTransactionManager.commit( transactionStatus );
 
-        Assert.isTrue( new File( storeDir, fileName ).exists() );
+        Assert.assertTrue( new File( storeDir, fileName ).exists() );
     }
     
     @Test
@@ -82,7 +83,7 @@ public class CommonsTransactionPlatformTransactionManagerTest
         fileResourceManager.createResource( ( (DefaultTransactionStatus) transactionStatus ).getTransaction(), fileName );
         commonsTransactionPlatformTransactionManager.rollback( transactionStatus );
         
-        Assert.isTrue( ! new File( storeDir, fileName ).exists() );
+        Assert.assertTrue( ! new File( storeDir, fileName ).exists() );
     }
 
 
