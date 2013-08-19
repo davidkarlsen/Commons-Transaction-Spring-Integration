@@ -6,7 +6,6 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.SystemUtils;
 import org.apache.commons.transaction.file.FileResourceManager;
 import org.apache.commons.transaction.file.ResourceManagerException;
-import org.apache.commons.transaction.file.ResourceManagerSystemException;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
