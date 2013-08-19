@@ -6,7 +6,7 @@ import java.io.IOException;
 import junit.framework.Assert;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.lang.SystemUtils;
+import org.apache.commons.lang3.SystemUtils;
 import org.apache.commons.transaction.file.ResourceManagerException;
 import org.junit.Before;
 import org.junit.Test;

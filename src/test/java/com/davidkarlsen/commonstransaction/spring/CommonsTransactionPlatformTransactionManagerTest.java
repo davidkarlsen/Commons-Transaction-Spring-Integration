@@ -3,7 +3,7 @@ package com.davidkarlsen.commonstransaction.spring;
 import java.io.File;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.lang.SystemUtils;
+import org.apache.commons.lang3.SystemUtils;
 import org.apache.commons.transaction.file.FileResourceManager;
 import org.apache.commons.transaction.file.ResourceManagerException;
 import org.apache.commons.transaction.file.ResourceManagerSystemException;
