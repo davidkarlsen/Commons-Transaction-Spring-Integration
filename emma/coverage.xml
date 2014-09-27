@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!-- EMMA v2.1.5320 (stable) report, generated Fri Dec 13 13:07:46 CET 2013 -->
+<?xml version="1.0" encoding="UTF-8"?><!-- EMMA v2.1.5320 (stable) report, generated Sat Sep 27 18:47:34 CEST 2014 -->
 
 <report>
   <stats>
@@ -6,20 +6,20 @@
     <classes value="4"/>
     <methods value="44"/>
     <srcfiles value="4"/>
-    <srclines value="143"/>
+    <srclines value="145"/>
   </stats>
   <data>
     <all name="all classes">
       <coverage type="class, %" value="100% (4/4)"/>
       <coverage type="method, %" value="80%  (35/44)"/>
       <coverage type="block, %" value="68%  (374/550)"/>
-      <coverage type="line, %" value="65%  (92.3/143)"/>
+      <coverage type="line, %" value="65%  (94.3/145)"/>
 
       <package name="com.davidkarlsen.commonstransaction.spring">
         <coverage type="class, %" value="100% (4/4)"/>
         <coverage type="method, %" value="80%  (35/44)"/>
         <coverage type="block, %" value="68%  (374/550)"/>
-        <coverage type="line, %" value="65%  (92.3/143)"/>
+        <coverage type="line, %" value="65%  (94.3/145)"/>
 
         <srcfile name="CommonsTransactionPlatformTransactionManager.java">
           <coverage type="class, %" value="100% (1/1)"/>
@@ -242,13 +242,13 @@
           <coverage type="class, %" value="100% (1/1)"/>
           <coverage type="method, %" value="78%  (7/9)"/>
           <coverage type="block, %" value="93%  (114/122)"/>
-          <coverage type="line, %" value="86%  (24/28)"/>
+          <coverage type="line, %" value="87%  (26/30)"/>
 
           <class name="FileResourceManagerFactory">
             <coverage type="class, %" value="100% (1/1)"/>
             <coverage type="method, %" value="78%  (7/9)"/>
             <coverage type="block, %" value="93%  (114/122)"/>
-            <coverage type="line, %" value="86%  (24/28)"/>
+            <coverage type="line, %" value="87%  (26/30)"/>
 
             <method name="setResourceIdToPathMapper (ResourceIdToPathMapper): void">
               <coverage type="method, %" value="0%   (0/1)"/>
@@ -273,7 +273,7 @@
             <method name="createInstance (): FileResourceManager">
               <coverage type="method, %" value="100% (1/1)"/>
               <coverage type="block, %" value="100% (21/21)"/>
-              <coverage type="line, %" value="100% (2/2)"/>
+              <coverage type="line, %" value="100% (4/4)"/>
             </method>
             <method name="getObjectType (): Class">
               <coverage type="method, %" value="100% (1/1)"/>
