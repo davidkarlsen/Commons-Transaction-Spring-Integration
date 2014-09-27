@@ -8,7 +8,7 @@
     <groupId>com.davidkarlsen.commonstransaction.spring</groupId>
     <artifactId>commons-transaction-spring</artifactId>
     <packaging>jar</packaging>
-    <version>1.2-SNAPSHOT</version>
+    <version>1.2</version>
     <name>commons-transaction-spring</name>
     <url>http://wiki.github.com/davidkarlsen/Commons-Transaction-Spring-Integration</url>
     <prerequisites>
