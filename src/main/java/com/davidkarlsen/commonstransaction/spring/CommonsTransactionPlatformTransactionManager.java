@@ -60,8 +60,7 @@ public class CommonsTransactionPlatformTransactionManager
     {
         try
         {
-            boolean noTransaction = fileResourceManager.getTransactionState( transaction ) == FileResourceManager.STATUS_NO_TRANSACTION;
-            return !noTransaction;
+            return fileResourceManager.getTransactionState( transaction ) != FileResourceManager.STATUS_NO_TRANSACTION;
         }
         catch ( ResourceManagerException e )
         {
