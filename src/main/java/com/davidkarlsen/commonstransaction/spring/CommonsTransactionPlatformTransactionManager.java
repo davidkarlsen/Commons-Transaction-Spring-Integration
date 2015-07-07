@@ -15,6 +15,7 @@ import org.springframework.transaction.TransactionSystemException;
 import org.springframework.transaction.support.AbstractPlatformTransactionManager;
 import org.springframework.transaction.support.DefaultTransactionStatus;
 import org.springframework.transaction.support.ResourceTransactionManager;
+import org.springframework.transaction.support.TransactionSynchronizationManager;
 import org.springframework.util.Assert;
 
 /**
@@ -68,7 +69,13 @@ public class CommonsTransactionPlatformTransactionManager
             throw new TransactionSystemException( e.getMessage(), e );
         }
     }
-    
+
+    @Override
+    protected void doCleanupAfterCompletion( Object transaction )
+    {
+        TransactionSynchronizationManager.unbindResourceIfPossible( getResourceFactory() );
+    }
+
     /**
      * {@inheritDoc}
      */
@@ -87,6 +94,7 @@ public class CommonsTransactionPlatformTransactionManager
         }
     }
 
+
     /**
      * {@inheritDoc}
      */
@@ -96,12 +104,16 @@ public class CommonsTransactionPlatformTransactionManager
     {
         try
         {
-            String txId;
-            synchronized ( fileResourceManager )
-            {
-                txId = fileResourceManager.generatedUniqueTxId();
+            String txId = (String) TransactionSynchronizationManager.getResource( getResourceFactory() );
+
+            if ( txId == null ) {
+                synchronized ( fileResourceManager )
+                {
+                    txId = fileResourceManager.generatedUniqueTxId();
+                    TransactionSynchronizationManager.bindResource( getResourceFactory(), txId );
+                }
+                log.debug( "Created txId: " + txId );
             }
-            log.debug( "Created txId: " + txId );
 
             return txId;
         }
