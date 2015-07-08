@@ -2,3 +2,5 @@ A PlatformTransactionManager implementation and a few Spring Extensions for usin
 Commons Transaction from Apache for transactional fileaccess.
 
 Travis CI build status: [![Build Status](https://travis-ci.org/davidkarlsen/Commons-Transaction-Spring-Integration.svg?branch=develop)](https://travis-ci.org/davidkarlsen/Commons-Transaction-Spring-Integration)
+![Maven Central](https://img.shields.io/maven-central/v/com.davidkarlsen.commonstransaction.spring/commons-transaction-spring.svg?style=flat-square)
+
