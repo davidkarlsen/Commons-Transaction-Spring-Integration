@@ -12,7 +12,7 @@
     <name>commons-transaction-spring</name>
     <url>http://wiki.github.com/davidkarlsen/Commons-Transaction-Spring-Integration</url>
     <prerequisites>
-        <maven>3.0.0</maven>
+        <maven>3.0.5</maven>
     </prerequisites>
     <description>
         A PlatformTransactionManager implementation and a few Spring Extensions for using
@@ -76,7 +76,7 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <version>2.5.4</version>
+                <version>3.0.1</version>
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
