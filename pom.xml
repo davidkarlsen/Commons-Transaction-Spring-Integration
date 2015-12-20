@@ -27,7 +27,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <project.build.java.target>1.6</project.build.java.target>
         <spring.framework.version>4.2.1.RELEASE</spring.framework.version>
-        <slf4j.version>1.7.12</slf4j.version>
+        <slf4j.version>1.7.13</slf4j.version>
         <javadocPluginVersion>2.10.3</javadocPluginVersion>
     </properties>
     <distributionManagement>
