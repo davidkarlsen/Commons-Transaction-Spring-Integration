@@ -26,7 +26,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <project.build.java.target>1.7</project.build.java.target>
-        <spring.framework.version>4.2.5.RELEASE</spring.framework.version>
+        <spring.framework.version>4.3.0.RELEASE</spring.framework.version>
         <slf4j.version>1.7.20</slf4j.version>
         <javadocPluginVersion>2.10.3</javadocPluginVersion>
     </properties>
